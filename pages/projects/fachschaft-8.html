@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bartokstudio | Fachschaft 8</title>
+    <meta name="date" content="2014">
+    <meta name="type" content="Corporate Design / Social Media / Siebdruck">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the date and type metadata
+            var date = document.querySelector('meta[name="date"]').getAttribute("content");
+            var type = document.querySelector('meta[name="type"]').getAttribute("content");
+
+            // Display the metadata in the HTML
+            document.getElementById("date").textContent = date;
+            document.getElementById("type").textContent = type;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="../../index.html">bartokstudio</a><span class="subtitle">GRAFIKDESIGN</span></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../studio.html">Studio</a></li>
+                <li><a href="../workshop.html">Workshop</a></li>
+                <li><a href="../kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Fachschaft 8</h1>
+        <p class="description">Visuelles Erscheinungsbild des Fachschaftsrates der Fakultät für Design und Kunst der Bergischen Universität Wuppertal.</p>
+        <div class="metadata">
+            <p class="date"><span id="date"></span></p>
+            <p class="type"><span id="type"></span></p>
+        </div>
+
+        <div> 
+            <div class="grid"> 
+                <!-- Insert images here -->
+                <img src="../../assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 1">
+                <img src="../assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 2">
+                <img src="assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 3">
+                <img src="assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 4">
+                <img src="assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 5">
+                <img src="assets/projects/dummy_1500x1125_000000_f2f2f2_projekt.png" alt="Image 6">
+            </div>
+        </div>
+
+        
+    </main>
+    <footer class="footer"> <!-- Fixed class name -->
+        <div class="social-icons"> <!-- Fixed class name -->
+            <a href="https://www.instagram.com/bartokstudio" target="_blank"><img src="../../assets/icons/instagram-line.svg" alt="Instagram"></a>
+            <a href="mailto:design@bartokstudio.com"><img src="../../assets/icons/at-line.svg" alt="Email"></a>
+            <a href="https://www.behance.net/bartokstudio" target="_blank"><img src="../../assets/icons/behance-fill.svg" alt="Behance"></a>
+        </div>
+        <div class="footer-text"> <!-- Fixed class name -->
+            <p>&copy; 2023 bartokstudio. Alle Rechte vorbehalten. <a href="pages/impressum.html">Impressum und Datenschutz</a>.</p>
+        </div>
+    </footer>
+    </footer>
+</body>
+</html>
