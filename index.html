@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-15BE3046RV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-15BE3046RV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bartokstudio</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script defer src="scripts/main.js"></script>
+  <script defer src="scripts/fade.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // Initialize Swiper
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          hide: true,
+        },
+        mousewheel: false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true, // Enable looping
+        autoplay: {
+          delay: 5000, // Autoplay every 5 seconds
+          disableOnInteraction: false, // Keep autoplaying even when user interacts with swiper
+        },
+      });
+
+      // Make images fullscreen
+      var swiperImages = document.querySelectorAll('.swiper-slide img');
+      swiperImages.forEach(function (image) {
+        image.style.objectFit = 'cover';
+        image.style.height = '100vh';
+      });
+    });
+  </script>
+  <style>
+    .swiper-container {
+      z-index: -1;
+      top: 75px;
+      width: 100%;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* For smaller screens (mobile phones) */
+    @media screen and (max-width: 767px) {
+      .swiper-slide img {
+        height: 100vh,
+      }
+
+      .swiper-container {
+        height: 100vh;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #333;
+      display: none;
+    }
+
+    /* Hide swiper scrollbar */
+    .swiper-scrollbar {
+      display: none;
+    }
+
+    /* Hide horizontal overflow */
+    body {
+      overflow: hidden;
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    .circle-text text {
+      fill: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar-container-main"></div>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Insert images here -->
+      <div class="swiper-slide"><img src="assets/img/slide-1.png" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="assets/img/slide-2.png" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="assets/img/bg-3.png" alt="Image 3"></div>
+
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+</body>
+
+</html>

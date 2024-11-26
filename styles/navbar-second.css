@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    /* Ensure the navbar takes the full height of the viewport */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}

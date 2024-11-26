@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Overpass';
+    src: url('/assets/fonts/Overpass-VariableFont.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Overpass Mono';
+    src: url('/assets/fonts/OverpassMono-VariableFont.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: Overpass, sans-serif;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+b {
+    font-weight: 550;
+}
+
+.big {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+/* Navbar */
+.navbar {
+    background-color: none;
+    width: 25%;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    transform: translateX(10px);
+}
+
+.navbar a:active {
+    color: black;
+}
+
+/* Content */
+.content {
+    margin-left: 25%;
+    padding: 20px;
+}
+
+/* Styling the page container */
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Grid Repeat */
+.grid-container-2 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-container-3 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container-4 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Styling each grid item */
+.grid-item {
+    background-color: none;
+    border: 1px solid #f7f7f7;
+
+}
+
+.grid-item img {
+    width: 100%;
+    background-color: #ffa481;
+}
+
+.grid-item a {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item a .caption {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.grid-item a:hover {
+    opacity: 0.7;
+}
+
+.grid-item a:hover .caption {
+    transform: translateX(10px);
+}
+
+/* Caption */
+.caption {
+    font-size: 0.6em;
+    line-height: 0.4;
+    color: rgb(181, 181, 181);
+    font-family: Overpass Mono, sans-serif;
+}
+
+.caption a {
+    color: rgb(181, 181, 181);
+    text-decoration: none;
+}
+
+.grid-item .caption {
+    line-height: 0.4;
+}
+
+.caption a :hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: none;
+    color: rgb(191, 191, 191);
+    font-size: 0.6em;
+    text-align: left;
+    padding: 10px 0;
+    grid-column: span 2;
+    position: relative;
+    /* Moves to bottom */
+    width: 100%;
+}
+
+.footer a {
+    color: rgb(191, 191, 191);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: rgb(191, 191, 191);
+    text-decoration: underline;
+}
+
+/* Next Button */
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.next a {
+    font-size: 1.8em;
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: transform 0.3s ease;
+    /* Smooth transition effect */
+}
+
+.next a:hover {
+    text-decoration: none;
+    transform: translateX(10px);
+}
