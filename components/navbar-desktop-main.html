@@ -1,8 +1,8 @@
-<nav class="navbar">
+<nav class="navbar-main">
   <ul>
     <li class="left-top">
       <div class="left-top-content">
-        <b>bartokstudio</b> / grafikdesign
+        <b>bartokstudio</b>
         <div class="hidden-text">
           <a href="mailto:design@bartokstudio.de">
             → design@bartokstudio.de
@@ -40,17 +40,11 @@
   .left-top .hidden-text {
     position: absolute;
     top: 100%;
-    /* Place the text just below the parent content */
     left: 10px;
-    /* Align with the left edge of the parent */
     width: max-content;
-    /* Adjust width to fit the content */
     opacity: 0;
-    /* Start hidden */
     transform: translateY(-10px);
-    /* Offset for animation */
     pointer-events: none;
-    /* Prevent accidental interaction */
     transition: opacity 0.3s ease-in, transform 0.3s ease-in;
   }
 
@@ -58,9 +52,7 @@
   .left-top:hover .hidden-text {
     opacity: 1;
     transform: translateY(0);
-    /* Slide into place */
     pointer-events: auto;
-    /* Allow interaction */
   }
 
   /* Animate lines one by one */
@@ -72,22 +64,6 @@
 
   .left-top .hidden-text p:nth-child(1) {
     animation-delay: 0.2s;
-  }
-
-  .left-top .hidden-text p:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-
-  .left-top .hidden-text p:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-
-  .left-top .hidden-text p:nth-child(4) {
-    animation-delay: 0.8s;
-  }
-
-  .left-top .hidden-text p:nth-child(5) {
-    animation-delay: 1s;
   }
 
   /* Keyframes for smooth fade-in animation */
@@ -202,6 +178,46 @@
     font-weight: 300;
     fill: white;
     pointer-events: none;
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .left-top {
+      font-size: 1.6em;
+      top: 10px;
+      left: 10px;
+    }
+    .right-top {
+      font-size: 1.6em;
+      top: 10px;
+      right: 10px;
+    }
+    .left-bottom {
+      font-size: 1.6em;
+      bottom: 10px;
+      left: 10px;
+    }
+    .right-bottom {
+      font-size: 1.6em;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .circle-text {
+    width: 300px;
+    height: 300px;
+    animation: rotateText 20s linear infinite;
+  }
+
+  .circle-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 150px);
+    z-index: 1000;
+  }
   }
 </style>
 <!-- End of Rotating Text Circle Snippet -->

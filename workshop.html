@@ -17,11 +17,21 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script defer src="scripts/main.js"></script>
     <script defer src="scripts/fade.js"></script>
+    <script defer src="../scripts/info.js"></script>
+    <style>
+        @media screen and (max-width: 767px) {
+            .grid-container-2, .grid-container-3, .grid-container-4 {
+        grid-template-columns: 1fr; /* Stack grid items in a single column */
+        grid-gap: 20px; /* Reduce grid gap for smaller screens */
+    }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar Container -->
     <div class="navbar-container"></div>
+    <div class="navbar-container-mobile"></div>
 
     <!-- Main Content -->
     <div class="content">
@@ -36,7 +46,7 @@
                 Siebdruck und Risografie.<br><br>
                 &nbsp; &nbsp; &nbsp; &nbsp; Bei den Workshops geht es darum, traditionelle Techniken abseits des
                 Bildschirms zu erleben und im Austausch mit anderen das eigene gestalterische Denken zu
-                erweitern.<br><br>
+                erweitern.<br>
             </div>
             <div class="grid-item">
                 <span class="caption">print making on paper and textil</span>
@@ -68,6 +78,9 @@
         <div class="footer-container"></div>
     </div>
     </div>
+
+
+    <script defer src="scripts/info.js"></script>
 </body>
 
 </html>
