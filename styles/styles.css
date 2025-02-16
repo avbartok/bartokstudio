@@ -18,9 +18,9 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f8f8f8;
-    color: black;
+    color: #333;
     font-size: 1.4em;
     font-weight: 300;
     opacity: 0;
@@ -71,36 +71,6 @@ b {
     color: black;
 }
 
-.navbar {
-    background-color: none;
-    width: 25%;
-    position: fixed;
-    height: 100%;
-    padding: 20px;
-}
-
-.navbar-main ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar-main a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.navbar-main a:hover {
-    text-decoration: none;
-    transform: translateX(10px);
-}
-
-.navbar-main a:active {
-    color: white;
-}
-
 /* Content */
 .content {
     margin-left: 25%;
@@ -114,12 +84,6 @@ b {
 }
 
 /* Grid Repeat */
-.grid-container-1 {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(1, 1fr);
-}
-
 .grid-container-2 {
     display: grid;
     grid-gap: 20px;
@@ -141,6 +105,8 @@ b {
 /* Styling each grid item */
 .grid-item {
     background-color: none;
+    border: 1px solid #f7f7f7;
+
 }
 
 .grid-item img {
@@ -196,6 +162,7 @@ b {
     padding: 10px 0;
     grid-column: span 2;
     position: relative;
+    /* Moves to bottom */
     width: 100%;
 }
 
@@ -226,6 +193,7 @@ b {
     color: black;
     display: block;
     transition: transform 0.3s ease;
+    /* Smooth transition effect */
 }
 
 .next a:hover {
@@ -235,184 +203,105 @@ b {
 
 /* Media Queries for Responsive Design */
 
-/* Smartphones*/
+/* Smartphones (up to 767px width) */
 @media screen and (max-width: 767px) {
     body {
-        font-size: 1.2em;
-        height: auto !important;
+        font-size: 1.2em; /* Adjust font size for readability on smaller screens */
     }
 
     .navbar {
-        display: none !important;
+        width: 100%; /* Make navbar full-width */
+        height: auto; /* Adjust height for better layout */
+        position: static; /* Make it scrollable with the page */
+        padding: 10px;
     }
 
-    .navbar-mobile {
-        background-color: yellow;
-        height: auto;
-    }
-
-    .navbar-mobile ul {
+    .navbar ul {
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align links to the left */
         padding: 0;
-        list-style: none;
-        margin: 0;
-        width: 100%;
+        gap: 15px; /* Add spacing between links */
     }
 
-    .navbar-mobile li {
-        flex: 0;
-    }
-
-    .navbar-mobile li:last-child {
-        margin-left: auto;
-    }
-
-    .navbar-mobile a {
-        font-size: 1em;
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-        transition: transform 0.3s ease;
-    }
-
-    .navbar-mobile a:hover {
-        text-decoration: none;
-        transform: translateX(10px);
-    }
-
-    .navbar-mobile a:active {
-        color: black;
+    .navbar a {
+        font-size: 1em; /* Reduce link size for smaller screens */
+        transform: none; /* Disable hover translate for simplicity */
     }
 
     .content {
-        margin-left: 0;
+        margin-left: 0; /* Remove left margin to make content full-width */
+        padding: 10px;
     }
 
-    .grid-container-2,
-    .grid-container-3,
-    .grid-container-4 {
-        grid-template-columns: 1fr;
-        grid-gap: 30px;
-    }
-
-    .caption {
-        font-size: 0.7em;
+    .grid-container-2, .grid-container-3, .grid-container-4 {
+        grid-template-columns: 1fr; /* Stack grid items in a single column */
+        grid-gap: 10px; /* Reduce grid gap for smaller screens */
     }
 
     .footer {
-        text-align: left;
-        font-size: 0.6em;
+        text-align: center; /* Center-align footer text */
+        font-size: 0.8em; /* Adjust font size */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .next {
+        bottom: 10px;
+        left: 10px;
     }
 }
 
-/* Tablets*/
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+/* Tablets (768px to 1024px width) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     body {
-        height: auto !important;
-        font-size: 1.3em;
+        font-size: 1.3em; /* Slightly smaller font size for tablets */
     }
 
     .navbar {
-        display: none !important;
-    }
-
-    .navbar-mobile {
-        height: auto;
-    }
-
-    .navbar-mobile ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-        list-style: none;
-        margin: 0;
-        overflow: visible;
-        width: 100%;
-    }
-
-    .navbar-mobile li {
-        flex: 0;
-    }
-
-    .navbar-mobile li:last-child {
-        margin-left: auto;
-    }
-
-    .navbar-mobile a {
-        font-size: 1em;
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-        transition: transform 0.3s ease;
-    }
-
-    .navbar-mobile a:hover {
-        text-decoration: none;
-        transform: translateX(10px);
-    }
-
-    .navbar-mobile a:active {
-        color: black;
+        width: 30%; /* Slightly narrower navbar for tablets */
+        padding: 15px;
     }
 
     .content {
+        margin-left: 30%; /* Adjust margin to match navbar width */
         padding: 15px;
-        margin-left: 0 !important;
     }
 
     .grid-container-2 {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* Keep two columns on tablets */
+        grid-gap: 15px; /* Adjust gap for better spacing */
     }
 
     .grid-container-3 {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Reduce to two columns */
     }
 
     .grid-container-4 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .caption {
-        font-size: 0.7em;
+        grid-template-columns: repeat(3, 1fr); /* Reduce to three columns */
     }
 
     .footer {
-        font-size: 0.6em;
-        border-top: 1px solid lightgrey;
-        margin-top: 20px;
+        font-size: 0.9em; /* Slightly larger footer font size */
+        padding: 15px;
     }
 
+    .next {
+        bottom: 15px;
+        left: 15px;
+    }
 }
 
-/* Larger Desktops*/
+/* Larger Desktops (above 1200px width) */
 @media screen and (min-width: 1200px) {
-
     .navbar {
-        width: 20%;
+        width: 20%; /* Narrower navbar for large screens */
     }
 
     .content {
-        margin-left: 25%;
-        padding: 20px;
-    }
-
-    .navbar-mobile {
-        display: none !important;
-    }
-
-    .navbar-container-mobile, .navbar-container-mobile-on-project {
-        display: none !important;
-    }
-
-    .content {
-        margin-left: 20%;
+        margin-left: 20%; /* Adjust content margin accordingly */
     }
 
     .grid-container-4 {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* Keep four columns */
     }
 }
