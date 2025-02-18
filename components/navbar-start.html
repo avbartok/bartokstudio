@@ -1,28 +1,21 @@
 <nav class="navbar">
-  <ul>
-    <li class="left-top">
-      <div class="left-top-content">
-        <b>bartokstudio</b> / grafikdesign
-        <div class="hidden-text">
-          <a href="mailto:design@bartokstudio.de">
-            → design@bartokstudio.de
-          </a>
-        </div>
-      </div>
-    <li class="right-top"><a href="portfolio.html">Portfolio</a></li>
-    <li class="left-bottom"><a href="workshop.html">Workshop</a></li>
-    <li class="right-bottom"><a href="bio.html">Bio</a></li>
+  <ul class="menu-1">
+    <li><b>bartokstudio</b></li>
+    <li><a href="portfolio.html">portfolio</a></li>
+    <li><a href="workshop.html">workshop</a></li>
+    <li><a href="bio.html">bio</a></li>
+  </ul>
+  <ul class="menu-2">
+    <li><a href="mailto:design@bartokstudio.de">↗︎ Kontakt</a></li>
+    <li><a href="https://instagram.com/bartokstudio">↗︎ Instagram</a></li>
   </ul>
 </nav>
 
-<!-- Start of Rotating Text Circle Snippet -->
 <div class="circle-text-container">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" class="circle-text">
-    <!-- Define the circle path -->
     <defs>
       <path id="circle-path" d="M 150,150 m 0,-100 a 100,100 0 1,1 0,200 a 100,100 0 1,1 0,-200" />
     </defs>
-    <!-- Apply text along the circular path -->
     <text>
       <textPath href="#circle-path" startOffset="0%" textLength="618">
         • bartokstudio • grafikdesign • visual identities
@@ -31,177 +24,93 @@
   </svg>
 </div>
 
+
 <style>
-  .left-top-content {
-    position: relative;
-  }
-
-  /* Position the hidden text beneath the content */
-  .left-top .hidden-text {
-    position: absolute;
-    top: 100%;
-    left: 10px;
-    width: max-content;
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-  }
-
-  /* Show the text on hover */
-  .left-top:hover .hidden-text {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  /* Animate lines one by one */
-  .left-top .hidden-text p {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  .left-top .hidden-text p:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-
-  /* Keyframes for smooth fade-in animation */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .hidden-text p {
-    color: white;
-    line-height: 0.6;
-  }
-
-  .left-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Navbar Styling */
+  .menu-1 {
     position: fixed;
-    font-size: 2em;
     top: 40px;
     left: 40px;
-    z-index: 1000;
-    color: white;
+    list-style: none;
+    padding: 0;
+    font-weight: 300;
   }
-
-  .left-top a {
+  
+  .menu-1 li {
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    color: white;
     text-decoration: none;
+  }
+
+  .menu-1 a {
     color: white;
   }
 
-  .left-top:hover a {
-    color: white;
-    cursor: pointer;
-  }
-
-  .right-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .menu-2 {
     position: fixed;
-    font-size: 2.2em;
-    font-weight: 500;
-    top: 40px;
-    right: 40px;
-    z-index: 1000;
-  }
-
-  .left-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    font-size: 2.2em;
-    font-weight: 500;
     bottom: 40px;
     left: 40px;
-    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    font-weight: 300;
   }
-
-  .right-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+  
+  .menu-2 li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-2 a {
     font-size: 2.2em;
-    font-weight: 500;
-    bottom: 40px;
-    right: 40px;
-    z-index: 1000;
+    color: white;
+    text-decoration: none;
   }
 
-  /* Container to center the SVG */
+  .menu-1 a:visited,
+.menu-1 a:focus,
+.menu-1 a:active {
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+
+.menu-2 a:visited,
+.menu-2 a:focus,
+.menu-2 a:active {
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+
+  html, body {
+    cursor: default !important;
+  }
+
+body a {
+    cursor: pointer !important;
+    pointer-events: auto;
+    z-index: 50;
+}
+
+  /* Circle */
   .circle-text-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
-    top: calc(50vh - 200px);
-    left: calc(50vw - 200px);
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
   }
 
-  /* CSS animation to rotate the text along the circle path */
-  @keyframes rotateText {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Apply rotation animation to the SVG */
   .circle-text {
-    width: 400px;
-    height: 400px;
-    animation: rotateText 20s linear infinite;
+    width: 240px;
+    height: 240px;
   }
 
-  /* Optional: Style the text */
   .circle-text text {
     font-family: Overpass, sans-serif;
-    font-size: 28px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 500;
     fill: white;
     pointer-events: none;
   }
 
-  @media screen and (max-width: 767px) {
-
-    .left-top {
-      font-size: 1.6em;
-      top: 10px;
-      left: 10px;
-    }
-    .right-top {
-      font-size: 1.6em;
-      top: 10px;
-      right: 10px;
-    }
-    .left-bottom {
-      font-size: 1.6em;
-      bottom: 10px;
-      left: 10px;
-    }
-    .right-bottom {
-      font-size: 1.6em;
-      bottom: 10px;
-      right: 10px;
-    }
-  }
 </style>
-<!-- End of Rotating Text Circle Snippet -->
