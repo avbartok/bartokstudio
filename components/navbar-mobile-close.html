@@ -1,31 +1,58 @@
-<nav class="navbar">
+<nav class="navbar-mobile">
   <ul class="navbar-left">
-      <li><a href="../index.html"><b>bartokstudio</b><br>grafikdesign</a></li>
+    <li><a href="../index.html"><b>bartokstudio</b> / grafikdesign</a></li>
   </ul>
   <ul class="navbar-right">
-      <li><a href="../index.html">NEXT</a></li>
+    <li><a href="../components/navbar-mobile-open.html" id="info-button">INFO</a></li> <!-- Go Back link -->
   </ul>
 </nav>
 
 <style>
-.navbar {
-    background-color: pink;
-    display: inline-block;
-    padding: 10px 20px;
-    max-width: 100vw !important;
-    border-bottom: 1px solid rgb(232, 232, 232);
-}
+  /* Prevent horizontal scroll */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
 
-.navbar ul {
+  .navbar-mobile {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    max-width: 100vw;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    position: relative;
+    z-index: 3;
+  }
+
+  .navbar-mobile ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
-}
+  }
 
-.navbar a {
+  .navbar-mobile a {
     text-decoration: none;
     color: black;
-}
+    cursor: pointer;
+  }
 </style>
+
+<script>
+  // Get the INFO button and popup
+  const infoButton = document.getElementById('info-button');
+  const popup = document.getElementById('popup');
+
+  // When the INFO button is clicked, toggle the popup visibility
+  infoButton.addEventListener('click', function() {
+    popup.style.display = 'flex'; // Show the popup
+  });
+
+  // Optional: Close the popup when clicking anywhere inside it (if needed)
+  popup.addEventListener('click', function() {
+    popup.style.display = 'none'; // Hide the popup
+  });
+</script>

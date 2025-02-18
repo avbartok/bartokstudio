@@ -1,50 +1,25 @@
 <nav class="navbar">
-  <ul>
+  <ul class="menu-1">
     <li><a href="index.html"><b>bartokstudio</b> / grafikdesign</a></li>
     <br>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="workshop.html">Workshop</a></li>
     <li><a href="bio.html">Bio</a></li>
     <br>
-    <li>Kontakt</li>
-    <li><a href="mailto:design@bartokstudio.de">design@bartokstudio.de</a></li>
-    <br>
+    <li><a href="mailto:design@bartokstudio.de">↗︎ Kontakt</a></li>
     <li><a href="https://instagram.com/bartokstudio">↗︎ Instagram</a></li>
-    <li><a href="https://behance.com/bartokstudio">↗︎ Behance</a></li>
-  </ul>
-
-  <ul class="bold">
-    <li>Visuelle Identität</li>
-    <li>Print- und Webdesign</li>
-    <li>Editorial Layout</li>
-    <li>Plakatkunst</li>
-    <li>Animation</li>
   </ul>
 </nav>
 
 <style>
 /* The Navbar container is now a flex container */
 .navbar {
+  font-size: 1em;
   display: flex;             /* Enable flexbox */
   flex-direction: column;    /* Stack child elements vertically */
   height: 100vh;             /* Full viewport height */
-  justify-content: space-between;  /* Space between the two <ul> elements */
   padding: 20px;             /* Optional: Padding around the navbar */
   box-sizing: border-box;   /* Ensure padding doesn't cause overflow */
-}
-
-/* First <ul> should take up available space */
-.navbar ul:first-of-type {
-  flex-grow: 1;              /* Make the first <ul> grow to take available space */
-  margin: 0;
-  padding: 0;                /* Remove any padding/margins to avoid extra spacing */
-}
-
-/* Second <ul> stays at the bottom */
-.bold {
-  font-weight: 500;
-  padding-top: 20px;
-  margin: 0;
-  color: lightgray;
+  background: white;
 }
 </style>
