@@ -13,20 +13,22 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bartokstudio</title>
+    <title>bartokstudio - Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script defer src="scripts/main.js"></script>
     <script defer src="scripts/fade.js"></script>
+    <script defer src="scripts/popup.js"></script>
 </head>
 
 <body>
     <!-- Navbar Container -->
-    <div class="navbar-container"></div>
+    <div class="navbar-container-mobile-close"></div>
+    <div class="navbar-container-main"></div>
 
     <!-- Main Content -->
     <div class="content">
 
-        <div class="grid-container-3">
+        <div class="grid-container-3" id="portfolio">
 
             <div class="grid-item">
                 <a href="projekte/projekt-10-karussell.html">
@@ -58,7 +60,7 @@
             </div>
             <div class="grid-item">
                 <a href="projekte/projekt-6-social-listening.html">
-                    <img src="assets/thumbnail/thumbnail-6-social-listening.png" alt="Social Listening">
+                    <img src="assets/img/6-social-listening/social-listening-6.png" alt="Social Listening">
                     <br>
                     <span class="caption">Social Listening</span>
                 </a>
@@ -100,7 +102,9 @@
             </div>
         </div>
         <!-- Footer Container -->
-        <div class="footer-container"></div>
+        <footer class="footer">
+            <p>(c) MMXXIV bartokstudio. <a href="../impressum.html">Impressum und Datenschutz.</a></p>
+            </footer>
     </div>
     </div>
 </body>
