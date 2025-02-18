@@ -13,12 +13,32 @@ function includeHTML(selector, file) {
       .catch(error => console.error('Error loading HTML:', error));
   }
   
-  // Load navbar and footer dynamically
   document.addEventListener('DOMContentLoaded', () => {
-    includeHTML('.circle', 'components/circle.html');
-    includeHTML('.navbar-container-main', 'components/navbar-desktop-main.html');
-    includeHTML('.navbar-container', 'components/navbar-desktop.html');
-    includeHTML('.footer-container', 'components/footer.html');
-    includeHTML('.navbar-container-on-projekt', '../components/navbar-desktop-on-projekt.html');
-    includeHTML('.footer-container', '../components/footer.html');
-  });
+    console.log("DOM fully loaded and parsed");
+
+    // Get the INFO button and the popup
+    const infoButton = document.getElementById('info-button');
+    const popup = document.getElementById('popup');
+
+    // Check if elements are being found
+    console.log('INFO button:', infoButton);
+    console.log('Popup:', popup);
+
+    if (infoButton && popup) {
+        // Add click event to the INFO button to toggle the popup
+        infoButton.addEventListener('click', () => {
+            console.log('INFO button clicked');
+            // Toggle the display property of the popup
+            popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+        });
+
+        // Close popup when clicking outside the content
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    } else {
+        console.error('INFO button or Popup not found');
+    }
+});
